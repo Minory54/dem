@@ -104,7 +104,7 @@
             this.tableActivity.ReadOnly = true;
             this.tableActivity.RowHeadersVisible = false;
             this.tableActivity.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tableActivity.Size = new System.Drawing.Size(776, 351);
+            this.tableActivity.Size = new System.Drawing.Size(776, 318);
             this.tableActivity.TabIndex = 12;
             // 
             // ModeratorForm
