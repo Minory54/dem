@@ -45,6 +45,8 @@ namespace Dem
                             where us.IdNumber == userNumber && us.Password == txtUserPassword.Text
                             select us).FirstOrDefault();
 
+                if (user != null)
+                {
                     DataBank.lastName = user.LastName;
                     DataBank.firstName = user.FirstName;
                     DataBank.email = user.Email;
@@ -55,11 +57,26 @@ namespace Dem
                     DataBank.dateBirth = Convert.ToString(user.Date);
                     DataBank.country = Convert.ToInt32(user.IdCountry);
 
-                    if (user.IdRole == 1) { 
+                    if (user.IdRole == 1)
+                    {
                         OrganizerForm organizerForm = new OrganizerForm();
                         this.Close();
-                        organizerForm.Show(); 
+                        organizerForm.Show();
                     }
+
+                    if (user.IdRole == 3)
+                    {
+                        ModeratorForm moderatorForm = new ModeratorForm();
+                        this.Close();
+                        moderatorForm.Show();
+                    }
+                }
+                else 
+                {
+                    MessageBox.Show("Пользователь с такими данными не найден!");
+                }
+
+
 
             }
             catch (Exception ex)

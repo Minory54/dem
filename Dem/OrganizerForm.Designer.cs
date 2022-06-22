@@ -88,7 +88,7 @@
             // 
             this.labelGreetings.AutoSize = true;
             this.labelGreetings.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelGreetings.Location = new System.Drawing.Point(345, 76);
+            this.labelGreetings.Location = new System.Drawing.Point(254, 75);
             this.labelGreetings.Name = "labelGreetings";
             this.labelGreetings.Size = new System.Drawing.Size(110, 23);
             this.labelGreetings.TabIndex = 9;

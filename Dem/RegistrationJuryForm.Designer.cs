@@ -34,7 +34,6 @@
             this.txtRepeatPassword = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtNumber = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.labelEmail = new System.Windows.Forms.Label();
@@ -54,7 +53,8 @@
             this.btnCamcel = new System.Windows.Forms.Button();
             this.btnAccept = new System.Windows.Forms.Button();
             this.labelRole = new System.Windows.Forms.Label();
-            this.cmdRole = new System.Windows.Forms.ComboBox();
+            this.cmbRole = new System.Windows.Forms.ComboBox();
+            this.txtPhone = new System.Windows.Forms.MaskedTextBox();
             this.panelHeader.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -112,15 +112,6 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(190, 28);
             this.txtPassword.TabIndex = 11;
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.BackColor = System.Drawing.Color.White;
-            this.txtPhone.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtPhone.Location = new System.Drawing.Point(163, 299);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(190, 28);
-            this.txtPhone.TabIndex = 9;
             // 
             // txtNumber
             // 
@@ -309,14 +300,23 @@
             this.labelRole.TabIndex = 26;
             this.labelRole.Text = "Роль:";
             // 
-            // cmdRole
+            // cmbRole
             // 
-            this.cmdRole.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cmdRole.FormattingEnabled = true;
-            this.cmdRole.Location = new System.Drawing.Point(162, 367);
-            this.cmdRole.Name = "cmdRole";
-            this.cmdRole.Size = new System.Drawing.Size(191, 28);
-            this.cmdRole.TabIndex = 10;
+            this.cmbRole.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cmbRole.FormattingEnabled = true;
+            this.cmbRole.Location = new System.Drawing.Point(162, 367);
+            this.cmbRole.Name = "cmbRole";
+            this.cmbRole.Size = new System.Drawing.Size(191, 28);
+            this.cmbRole.TabIndex = 10;
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtPhone.Location = new System.Drawing.Point(163, 300);
+            this.txtPhone.Mask = "+7(999)-099-90-90";
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(190, 28);
+            this.txtPhone.TabIndex = 30;
             // 
             // RegistrationJuryForm
             // 
@@ -324,7 +324,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.cmdRole);
+            this.Controls.Add(this.txtPhone);
+            this.Controls.Add(this.cmbRole);
             this.Controls.Add(this.cmbDirection);
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.btnCamcel);
@@ -332,7 +333,6 @@
             this.Controls.Add(this.txtRepeatPassword);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtNumber);
             this.Controls.Add(this.txtPatronymic);
             this.Controls.Add(this.txtFirstName);
@@ -369,7 +369,6 @@
         private System.Windows.Forms.TextBox txtRepeatPassword;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtNumber;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label labelEmail;
@@ -389,6 +388,7 @@
         private System.Windows.Forms.Button btnCamcel;
         private System.Windows.Forms.Button btnAccept;
         private System.Windows.Forms.Label labelRole;
-        private System.Windows.Forms.ComboBox cmdRole;
+        private System.Windows.Forms.ComboBox cmbRole;
+        private System.Windows.Forms.MaskedTextBox txtPhone;
     }
 }

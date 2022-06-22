@@ -29,9 +29,48 @@ namespace Dem
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            if (txtFirstName.Text == "" || txtLastName.Text == "" || txtEmail.Text == "" || txtPatronymic.Text == "" || txtPhone.Text == "")
+            if (txtFirstName.Text == "" || txtLastName.Text == "" || txtEmail.Text == "" || txtPatronymic.Text == "" || txtPhone.Text == "" || txtPassword.Text == "")
             {
                 MessageBox.Show("Заполните все поля");
+            }
+            try
+            {
+                if (Convert.ToString(txtPassword.Text) == Convert.ToString(txtRepeatPassword.Text) || Convert.ToString(txtRepeatPassword.Text) == "")
+                {
+                User user = new User
+                {
+                    FirstName = Convert.ToString(txtFirstName.Text),
+                    LastName = Convert.ToString(txtLastName.Text),
+                    Patronymic = Convert.ToString(txtPassword.Text),
+                    Email = Convert.ToString(txtEmail.Text),
+                    PhoneNumber = Convert.ToString(txtPhone.Text),
+                    Password = Convert.ToString(txtPassword.Text),
+                    IdNumber = Convert.ToInt32(txtNumber.Text),
+
+                    IdRole = Convert.ToInt32(cmbRole.SelectedValue),
+                    IdDirection = Convert.ToInt32(cmbDirection.SelectedValue),
+                    IdGender = Convert.ToInt32(cmbGender.SelectedValue),
+                };
+
+                    db.User.Add(user);
+                    db.SaveChanges();
+
+                    JuryForm juryForm = new JuryForm();
+                    this.Close();
+                    juryForm.Show();
+
+                    MessageBox.Show("Регистроация прошла успешно!");
+                }
+                else 
+                {
+                    MessageBox.Show("Повторите пароль!");
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -46,24 +85,24 @@ namespace Dem
         {
             Random r = new Random();
             int result;
-            result = r.Next(1, 10000); // x - минимальное, y - максимальное возможные числа
+            result = r.Next(1, 1000); // x - минимальное, y - максимальное возможные числа
 
             txtNumber.Text = result.ToString();
 
             var role = db.Role.ToList();
-            cmdRole.DataSource = role;
-            cmdRole.DisplayMember = "Name";
-            cmdRole.ValueMember = "Id";
+            cmbRole.DataSource = role;
+            cmbRole.DisplayMember = "Name";
+            cmbRole.ValueMember = "Id";
 
             var gender = db.Gender.ToList();
-            cmdRole.DataSource = gender;
-            cmdRole.DisplayMember = "Name";
-            cmdRole.ValueMember = "Id";
+            cmbGender.DataSource = gender;
+            cmbGender.DisplayMember = "Name";
+            cmbGender.ValueMember = "Id";
             
             var direction = db.Direction.ToList();
-            cmdRole.DataSource = direction;
-            cmdRole.DisplayMember = "Name";
-            cmdRole.ValueMember = "Id";
+            cmbDirection.DataSource = direction;
+            cmbDirection.DisplayMember = "Name";
+            cmbDirection.ValueMember = "Id";
         }
     }
 }

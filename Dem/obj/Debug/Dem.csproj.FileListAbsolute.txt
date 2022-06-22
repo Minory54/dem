@@ -21,3 +21,5 @@ C:\Users\olesy\Desktop\дем\Dem\obj\Debug\Dem.ProfileForm.resources
 C:\Users\olesy\Desktop\дем\Dem\obj\Debug\Dem.csproj.CopyComplete
 C:\Users\olesy\Desktop\дем\Dem\obj\Debug\Dem.JuryForm.resources
 C:\Users\olesy\Desktop\дем\Dem\obj\Debug\Dem.RegistrationJuryForm.resources
+C:\Users\olesy\Desktop\дем\Dem\obj\Debug\Dem.ModeratorForm.resources
+C:\Users\olesy\Desktop\дем\Dem\obj\Debug\Dem.MyActions.resources
