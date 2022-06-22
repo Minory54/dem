@@ -88,5 +88,12 @@ namespace Dem
                 labelGreetings.Text = "Добрый вечер, " + DataBank.firstName + " " + DataBank.patronymic;
             }
         }
+
+        private void btnMyAction_Click(object sender, EventArgs e)
+        {
+            MyActionsForm myActionsForm = new MyActionsForm();
+            this.Close();
+            myActionsForm.Show();
+        }
     }
 }
